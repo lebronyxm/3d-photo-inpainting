@@ -36,6 +36,13 @@ and the Python dependencies listed in [requirements.txt](requirements.txt)
     pip install -r requirements.txt
     conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit==10.1.243 -c pytorch
     ```
+    or  you use ccentos, and just need pip to install. the lower torch version will avoid the core problem(at least fewer than torch 1.4).
+    ```bash
+    #virtualenv --system-site-package --python=python3 pytorch
+    #cd pytorch && source bin/activate 
+    pip3 install -r requirements.txt
+    pip3 install pytorch==1.1.0 torchvision==0.2.0  
+    ```
 - Next, please download the model weight using the following command:
     ```bash
     chmod +x download.sh
