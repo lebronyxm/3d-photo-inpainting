@@ -50,8 +50,9 @@ for idx in tqdm(range(len(sample_list))):
 
     print(f"Running depth extraction at {time.time()}")
 
-    run_depth([sample['ref_img_fi']], config['src_folder'], config['depth_folder'],
-              config['MiDaS_model_ckpt'], MonoDepthNet, MiDaS_utils, target_w=640)
+    # make this step out of the schema due to core dump, and do it independly.
+    #run_depth([sample['ref_img_fi']], config['src_folder'], config['depth_folder'],
+    #          config['MiDaS_model_ckpt'], MonoDepthNet, MiDaS_utils, target_w=640)
     config['output_h'], config['output_w'] = np.load(sample['depth_fi']).shape[:2]
     frac = config['longer_side_len'] / max(config['output_h'], config['output_w'])
     config['output_h'], config['output_w'] = int(config['output_h'] * frac), int(config['output_w'] * frac)
